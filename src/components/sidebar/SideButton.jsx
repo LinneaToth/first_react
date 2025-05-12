@@ -12,7 +12,8 @@ export default function SideButton({ name = "undefined" }) {
     <button
       onClick={clickHandler}
       className={
-        "w-full " + (active ? "bg-(--color-accent)" : "bg-(--color-main-bg)")
+        "cursor-pointer mt-2 ml-5 mr-5 rounded-3xl h-12 active:scale-105 transition-all ease-in-out duration-200 " +
+        (active ? "bg-(--color-accent)" : "bg-(--color-main-bg)")
       }>
       {name}
     </button>

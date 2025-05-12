@@ -7,7 +7,12 @@ export default function NavLink({
   onClick,
 }) {
   return (
-    <li key={text} className={active ? "bg-(--color-accent)" : ""}>
+    <li
+      key={text}
+      className={
+        "h-full justify-self-center active:scale-105 transition-all ease-in-out duration-50 " +
+        (active ? "bg-(--color-accent)" : "")
+      }>
       <a
         href={url}
         onClick={(e) => {
