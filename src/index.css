@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main-bg: #22223D;
+  --color-secondary-bg: #1B1B31;
+  --color-accent: #EE2D87;
+  --color-text-main: #FFFFFF;
+  --gap: 1rem;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h4: 1rem;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: "./assets/fonts" format('woff2');
+  }
+}
