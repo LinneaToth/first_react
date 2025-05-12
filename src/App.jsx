@@ -15,8 +15,8 @@ function App() {
   return (
     <div
       className="bg-(--color-main-bg) text-(--color-text-main)
-    w-screen h-screen absolute 
-    grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-10 md:grid-cols-5 lg:grid-cols-6">
+    w-screen h-screen sm:min-h-[600px] absolute 
+    grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-10 lg:grid-cols-5 xl:grid-cols-6">
       <Navbar isSmall={isSmall} />
       <Sidebar isSmall={isSmall} />
       {/* <Content /> */}

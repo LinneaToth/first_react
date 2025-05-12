@@ -18,7 +18,7 @@ export default function Navbar({ isSmall = false }) {
 
   return (
     <nav className="bg-(--color-secondary-bg) h-[2.5rem] mt-[1rem] shadow-(<custom-property>) sm:col-start-2 sm:col-span-5 pl-[5rem] flex flex-row justify-between">
-      <ul className="ml-[50px] h-full flex flex-row gap-(--gap) justify-start items-center text-(length:--font-size-h3) pt-1">
+      <ul className="md:ml-[50px] h-full flex flex-row gap-8 justify-start items-center text-(length:--font-size-h3)">
         {links.map((link) => {
           return (
             <NavLink

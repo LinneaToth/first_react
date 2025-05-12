@@ -10,7 +10,7 @@ export default function NavLink({
     <li
       key={text}
       className={
-        "h-full justify-self-center active:scale-105 transition-all ease-in-out duration-50 " +
+        "h-full justify-self-center active:scale-105 transition-all ease-in-out duration-50 text-base pt-1.75 " +
         (active ? "bg-(--color-accent)" : "")
       }>
       <a
