@@ -9,7 +9,7 @@ export default function SideNav() {
   }
 
   return (
-    <ul className="mt-25 flex flex-col gap-2 h-50">
+    <ul className="mt-45 flex flex-col gap-2 h-50">
       <SideButton
         name="part 1"
         isActive={activeButton === "part 1" ? true : false}

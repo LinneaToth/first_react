@@ -35,14 +35,21 @@ export default function Navbar({
 
   function activeHandler(text) {
     setActiveButton(text);
+    if (isSmall && isVisible) {
+      setVisible(false);
+    }
   }
 
   return (
     <nav
-      className={`bg-(--color-secondary-bg) h-[2.5rem] mt-[1rem] shadow-(<custom-property>) sm:col-start-2 sm:col-span-5 pl-[5rem]`}>
+      className={`col-start-1 col-span-2 bg-(--color-secondary-bg) h-[3rem] mt-[1rem] shadow-(<custom-property>) sm:col-start-2 sm:col-span-5 lg:pl-[5rem]`}>
       <ul
-        className={`md:ml-[50px] h-full flex flex-row gap-8 justify-start items-center text-(length:--font-size-h3)  ${
-          !isVisible ? "hidden" : "flex flex-row justify-between"
+        className={`md:ml-[50px] mr-2 gap-8 justify-start items-center text-(length:--font-size-h3) ${
+          !isVisible ? "hidden" : "flex flex-col sm:flex-row justify-between"
+        } ${
+          isSmall && isVisible
+            ? "absolute ml-[10%] w-[80%] h-[80vh] mt-[10vh] rounded-4xl z-10 text-center bg-(--color-secondary-bg) pt-[10%] "
+            : ""
         }`}>
         {links.map((link) => {
           return (
@@ -51,7 +58,8 @@ export default function Navbar({
               text={link.text}
               key={link.text}
               active={activeButton === link.text}
-              onClick={activeHandler}
+              onMouseDown={activeHandler}
+              isSmall={isSmall}
             />
           );
         })}
