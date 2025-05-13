@@ -1,10 +1,24 @@
 import Title from "./Title.jsx";
 import Figure from "./Figure.jsx";
 import SideNav from "./SideNav.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Sidebar({ isSmall = false }) {
-  const [isVisible, setVisible] = useState(isSmall ? false : true);
+export default function Sidebar({ isSmall = false, sidebarShow }) {
+  const [isVisible, setVisible] = useState(
+    isSmall && !sidebarShow ? false : true
+  );
+
+  useEffect(() => {
+    if (isSmall && sidebarShow) {
+      setVisible(true);
+      return;
+    }
+    if (!isSmall) {
+      setVisible(true);
+      return;
+    }
+    setVisible(false);
+  }, [sidebarShow, isSmall]);
 
   return (
     <aside

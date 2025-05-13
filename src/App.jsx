@@ -4,6 +4,8 @@ import Sidebar from "./components/sidebar/Sidebar.jsx";
 // import Content from "./components/Content/Content.jsx";
 
 function App() {
+  const [sidebarShow, setSidebarShow] = useState(false);
+
   const [isSmall, setIsSmall] = useState(
     window.innerWidth < 640 ? true : false
   );
@@ -17,8 +19,12 @@ function App() {
       className="bg-(--color-main-bg) text-(--color-text-main)
     w-screen h-screen sm:min-h-[600px] absolute 
     grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-10 lg:grid-cols-5 xl:grid-cols-6">
-      <Navbar isSmall={isSmall} />
-      <Sidebar isSmall={isSmall} />
+      <Navbar
+        isSmall={isSmall}
+        sidebarShow={sidebarShow}
+        setSidebarShow={setSidebarShow}
+      />
+      <Sidebar isSmall={isSmall} sidebarShow={sidebarShow} />
       {/* <Content /> */}
     </div>
   );
