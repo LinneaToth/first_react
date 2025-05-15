@@ -1,20 +1,23 @@
+//Takes states about shown sidebar and navbar as props
 export default function Hamburger({
-  isSmall,
   sidebarShow,
   setSidebarShow,
   setNavbarShow,
   navbarShow,
 }) {
+  //Toggles visibility of sidebar (and ensures both menus aren't expanded at the same time)
   function clickHandlerSide() {
     setSidebarShow(!sidebarShow);
     navbarShow && setNavbarShow(false);
   }
 
+  //Toggles visibility of navbar (and ensures both menus aren't expanded at the same time)
   function clickHandlerNavbar() {
     setNavbarShow(!navbarShow);
     sidebarShow && setSidebarShow(false);
   }
 
+  //Returns two icons for navbar / sidebar
   return (
     <div className="flex flex-row ml-[75vw]">
       <img

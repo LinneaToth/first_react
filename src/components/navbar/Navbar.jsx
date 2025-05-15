@@ -1,7 +1,10 @@
+//Compontent responsible for the nav bar on top of the page
+
 import NavLink from "./NavLink.jsx";
 import Hamburger from "./Hamburger.jsx";
 import { useState, useEffect } from "react";
 
+//Separates the data from the logic
 const links = [
   { text: "home", url: "" },
   { text: "about", url: "" },
@@ -9,18 +12,21 @@ const links = [
   { text: "our history", url: "" },
 ];
 
+//takes states as props
 export default function Navbar({
   isSmall = false,
   sidebarShow,
   setSidebarShow,
 }) {
+  //Keeping track of which button is active
   const [activeButton, setActiveButton] = useState("home");
+  //Visibility of navbar
   const [navbarShow, setNavbarShow] = useState(false);
-
   const [isVisible, setVisible] = useState(
     isSmall && !navbarShow ? false : true
   );
 
+  //Effect reacts to changes to window size and if the navbar should be shown
   useEffect(() => {
     if (isSmall && navbarShow) {
       setVisible(true);
@@ -33,6 +39,7 @@ export default function Navbar({
     setVisible(false);
   }, [navbarShow, isSmall]);
 
+  //Logic for handling the active button
   function activeHandler(text) {
     setActiveButton(text);
     if (isSmall && isVisible) {
@@ -51,6 +58,7 @@ export default function Navbar({
             ? "absolute ml-[10%] w-[80%] h-[80vh] mt-[10vh] rounded-4xl z-10 text-center bg-(--color-secondary-bg) pt-[10%] "
             : ""
         }`}>
+        {/* Mapping over the array of links, creating a NavLink for each. Data as props, as well as states and clickhandling function */}
         {links.map((link) => {
           return (
             <NavLink
@@ -64,6 +72,7 @@ export default function Navbar({
           );
         })}
       </ul>
+      {/* Collapsed menu icons are added if the window is small. States as props. */}
       {isSmall && (
         <Hamburger
           sidebarShow={sidebarShow}

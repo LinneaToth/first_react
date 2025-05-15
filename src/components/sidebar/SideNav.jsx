@@ -1,15 +1,20 @@
+//Component responsible for the navigation part of the sidebar
+
 import { useState } from "react";
 import SideButton from "./SideButton.jsx";
 
 export default function SideNav() {
+  //Keeps track of the active buttons
   const [activeButton, setActiveButton] = useState("");
 
+  //Changes active button depending on name
   function activeHandler(name) {
     setActiveButton(name);
   }
 
   return (
-    <ul className="mt-45 flex flex-col gap-2 h-50">
+    <ul className="mt-40 flex flex-col gap-2 h-50">
+      {/* Buttons! Next time around this will be mapped, and each will get a Key */}
       <SideButton
         name="part 1"
         isActive={activeButton === "part 1" ? true : false}

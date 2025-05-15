@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+//Component responsible for the buttons in the sidebar
 export default function SideButton({ name = "undefined", onClick, isActive }) {
   return (
     <button

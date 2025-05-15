@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function NavLink({
   text = "undefined",
   url = "undefined",
@@ -8,6 +6,7 @@ export default function NavLink({
   isSmall,
 }) {
   return (
+    // Conditional styling, depending on state (small window or not)
     <li
       key={text}
       className={
